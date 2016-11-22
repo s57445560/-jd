@@ -1,0 +1,159 @@
+{% load num_add %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clearfix:after{
+            content: '.';
+            clear: both;
+            display: block;
+            visibility: hidden;
+            height: 0;
+        }
+        .pg-head .logo{
+            margin: 0 auto;
+{#            background-color: blue;#}
+            height: 90px;
+            width: 800px
+        }
+        .pg-body{
+            position: relative;
+
+{#            background-color: #e93854;#}
+        }
+        .pg-body #c1 input{
+            height: 30px;
+            width: 70px;
+            background-color: #e93854;
+            color: white;
+            margin-right: 80px;
+
+        }
+        .table_c{
+            margin: 0 auto;
+            width: 800px;
+            height: 120px;
+            border-top: 1px solid black;
+            background-color: mistyrose;
+            position: relative;
+        }
+        a:link {
+        font-size: 12px;
+        color: #000000;
+        text-decoration: none;
+        }
+        a:visited {
+        font-size: 12px;
+        color: #000000;
+        text-decoration: none;
+        }
+        a:hover {
+        font-size: 12px;
+        color: #999999;
+        text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="pg-head clearfix">
+        <div class="logo">
+            <img src="/static/img/logo.png" style="margin-top: 15px;float: left">
+            <div style="float: left;padding-left: 30px;padding-top: 10px"><h2>购物车</h2></div>
+            <div style="float: left;padding-left: 70px;padding-top: 10px"><h6 style="color: red">当前用户：{{ user_name }}</h6></div>
+            <div style="float: left;padding-left: 70px;padding-top: 35px"><a style="color: crimson" href="/home/">返回主页</a></div>
+        </div>
+    </div>
+    <div class="pg-body">
+        <div style="height:50px;width: 800px;margin: 0 auto;"id="c1">
+            <input type="button" value="全选" onclick="check_all()">
+            <input type="button" value="取消" onclick="check_remove()">
+            <input type="button" value="反选" onclick="check_reverse()">
+            <input type="button" value="删除数据" onclick="submit_r(this)">
+        </div>
+        <div style="height:37px;width: 800px;margin: 0 auto;background-color: antiquewhite;line-height: 37px" class="clearfix">
+            <div style="padding-left: 10px;color: #B61D1D;width: 130px;float: left">选择</div>
+            <div style="padding-left: 10px;color: #B61D1D;width: 200px;float: left">商品</div>
+            <div style="padding-left: 10px;color: #B61D1D;width: 129px;float: left">单价</div>
+            <div style="padding-left: 10px;color: #B61D1D;width: 161px;float: left">个数</div>
+            <div style="padding-left: 10px;color: #B61D1D;width: 80px;float: left">总价</div>
+        </div>
+        {% if cart_num_all != 0 %}
+            {% for item in data %}
+            <div class="table_c">
+                <div style="position: absolute;top: 24px; left: 12px"><input type="checkbox"></div>
+                <div style="position: absolute;top: 3px; left: 59px">
+                    <img src="/static/img/qing.png" style="height: 113px;width: 116px"/>
+                </div>
+                <div style="position: absolute;top: 34px; left: 210px" class="submit_r"><span>{{ item.product_name }}</span></div>
+                <div style="position: absolute;top: 34px; left: 359px">
+                    {{ item.money }}
+                </div>
+                <div style="position: absolute;top: 34px; left: 490px">
+                    <input type="text" readOnly="true" style="width: 50px" value="{{ item.nember }}"/>
+                </div>
+                <div style="position: absolute;top: 34px; left: 669px">
+                    {% yang_1 item.nember item.money %}
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div style="margin: 0 auto;width: 240px;height: 50px">
+                <h3>购物车是空的，请去购物吧</h3>
+            </div>
+        {% endif %}
+    </div>
+
+
+    <script src="/static/js/jquery-3.0.0.js"></script>
+    <script>
+        function check_all() {
+            $(':checkbox').prop('checked',true);
+        }
+
+
+        function check_remove() {
+            $(':checkbox').prop('checked',false);
+        }
+
+        function check_reverse() {
+            $(':checkbox').each(function(i){
+                if($(this).prop('checked')){
+                    $(this).prop('checked',false);
+                }else{
+                    $(this).prop('checked',true);
+                }
+            })
+        }
+
+        function submit_r(ths) {
+            var list_a = [];
+            $(':checkbox').each(function() {
+                if($(this).prop('checked')){
+                    list_a.push($(this).parent().parent().find('.submit_r span').text())
+                }
+            });
+            str_a = list_a.join('__');
+            $.ajax({
+                url:'/home/cart/',
+                type:'POST',
+                dataType:'json',
+                data:{'p_name':str_a},
+                success:function(data){
+                    if(data.status){
+                        $(':checkbox').each(function() {
+                            if ($(this).prop('checked')) {
+                                list_a.push($(this).parent().parent().remove())
+                            }
+                        });
+                        console.log('cccc')
+                    }else{
+                        console.log('111111')
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

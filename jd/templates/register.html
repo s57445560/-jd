@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            color: red;
+        }
+        .pg-head{
+            height: 90px;
+{#            background-color: #e93854;#}
+            line-height: 90px;
+        }
+        .w{
+            width: 990px;
+            height: 90px;
+            margin: 0 auto;
+{#            background-color: aqua;#}
+        }
+        .clearfix:after{
+            content: '.';
+            clear: both;
+            display: block;
+            visibility: hidden;
+            height: 0;
+        }
+        .item input{
+            border-style:none;
+            height:27px;
+            outline:none;
+        }
+        .item{
+            margin-left: 40px;
+            border: 1px solid silver;
+            display: inline-block;
+            height: 50px;
+            width: 270px;
+            line-height: 50px;
+            padding: 6px;
+        }
+        .pg-body{
+            height: 600px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="pg-head clearfix">
+        <div class="w" >
+            <img src="/static/img/logo.png" style="margin-top: 15px;float: left">
+            <div style="height:40px; width:1px; border-left:1px #000 solid;float: left;margin-top: 25px;margin-left: 20px;margin-right: 20px"></div>
+            <div style="float: left"><h3 style="margin: 0;">欢迎注册</h3></div>
+            <div style="float: right">已有账号 <a href="/home/login">请登录</a></div>
+        </div>
+        <hr style="margin: 0"/>
+    </div>
+    <div class="w"></div>
+    <div class="pg-body w clearfix">
+        <div class="item">
+            用 &nbsp户  &nbsp名：
+            <input type="text" id="user_name" min-len="6">
+        </div>
+        <div style="margin-left: 45px;height: 30px;width: 270px">
+            <span>
+            </span>
+        </div>
+        <div class="item">
+            设置 密码 ：
+            <input type="password" id="user_pwd" min-len="8">
+        </div>
+        <div style="margin-left: 45px;height: 30px;width: 270px">
+            <span>
+            </span>
+        </div>
+        <div class="item">
+            确认 密码 ：
+            <input type="password" id="user_pwd_r">
+        </div>
+        <div style="margin-left: 45px;height: 30px;width: 270px">
+            <span>
+            </span>
+        </div>
+        <div style="margin-left: 45px;height: 30px;width: 270px;font-size: 9px">
+            <div style="position: relative">
+                <input type="checkbox" style="position:absolute;width: 18px;height: 18px;top:-4px">
+                 <div style="position: absolute; left: 31px">我已阅读并同意《京东用户注册协议》</div>
+            </div>
+
+
+        </div>
+        <div>
+            <input type="button" value="立即注册" style="margin-left: 40px;height: 50px;width: 280px;
+            background-color: red;color: white;font-size: 20px" id="tijiao">
+        </div>
+
+        <div style="height:336px; width:1px; border-left:1px silver solid;position: absolute;top: 0;right: 560px;">
+        </div>
+        <div style="position: absolute;top:50px; right: 127px">
+            <img src="/static/img/1.gif">
+        </div>
+        <div style="margin-left: 45px;height: 30px;width: 270px">
+        </div>
+        <div class="w" style="margin-top: 50px">
+            <p>关于我们 | 联系我们 | 人才招聘 | 商家入驻 | 广告服务 | 手机京东 | 友情链接 | 销售联盟 | 京东社区 | 京东公益 | English Site</p>
+            <p style="text-align: center">Copyright © 2004-2016  京东JD.com 版权所有</p>
+        </div>
+    </div>
+    <script src="/static/js/jquery-3.0.0.js"></script>
+    <script src="/static/js/check_reg.js"></script>
+    <script>
+        $(function (){
+            $.sunyang('.item');
+        });
+    </script>
+</body>
+</html>

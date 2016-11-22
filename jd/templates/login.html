@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .help_r{
+            width: 300px;
+            height: 40px;
+            position: relative;
+            line-height: 40px;
+            text-align: center;
+
+        }
+        .help_r span{
+            color: darkorange;
+            display: inline-block;
+        }
+        .item{
+            width: 300px;
+            height: 40px;
+            text-align: center;
+        }
+        .item span{
+            position: absolute;
+            top:2px;
+            left: 202px;
+            background-color: red;
+            color: white;
+        }
+        .pg-head{
+            height: 90px;
+{#            background-color: aqua;#}
+        }
+        .pg-head .logo{
+            margin: 0 auto;
+{#            background-color: blue;#}
+            height: 90px;
+            width: 800px
+        }
+        .clearfix:after{
+            content: '.';
+            clear: both;
+            display: block;
+            visibility: hidden;
+            height: 0;
+        }
+        .w{
+            width: 990px;
+            margin: 0 auto;
+        }
+        .pg-body{
+            height: 500px;
+            background-color: #e93854;
+        }
+        .form_s{
+            height: 330px;
+            width: 30%;
+            background-color: white;
+            position: absolute;
+            top:60px;
+            right: 50px;
+            padding: 20px;
+        }
+        .submit{
+            height: 30px;
+            width: 210px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .to_zc{
+            height: 30px;
+            width: 210px;
+            margin: 0 auto;
+            margin-top: 50px;
+            line-height: 30px;
+            color: #b61d1d
+        }
+        .pg-bottom{
+
+        }
+    </style>
+    <link rel="stylesheet" href="/static/css/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="pg-head clearfix">
+        <div class="logo">
+            <img src="/static/img/logo.png" style="margin-top: 15px;float: left">
+            <div style="float: left;padding-left: 30px;padding-top: 10px"><h1>欢迎登陆</h1></div>
+        </div>
+    </div>
+    <div class="pg-body">
+        <div class="w" style="position: relative;">
+            <img src="/static/img/login_b.png"/>
+            <div class="form_s" id="form">
+                    <div>
+                        <h2 style="margin: 0;text-align: center;color: #e4393c">账号登陆</h2>
+                        <hr/>
+                    </div>
+                    <div class="help_r">
+                        <span id="help_info"></span>
+                    </div>
+                    <div class="item">
+                            账号：<input type="text" name="username" min-len="6" id="user_name"/>
+                    </div>
+                    <div class="item">
+                        密码：<input type="password" name="pwd" id="user_pwd"/>
+                    </div>
+                    <div class="submit">
+                        <input type="button"  value="登陆" id="tijiao"
+                               style="width: 210px;height: 40px;background-color: #e4393c;color: white;"/>
+                    </div>
+                    <div class="to_zc clearfix">
+                        <a href="/home/register/" style="float: right">立即注册</a>
+                        <i class="fa fa-hand-peace-o" aria-hidden="true" style="float: right;
+                        margin-top: 7px;margin-right: 5px"></i>
+                    </div>
+            </div>
+        </div>
+        <div class="w" style="margin-top: 50px">
+            <p>关于我们 | 联系我们 | 人才招聘 | 商家入驻 | 广告服务 | 手机京东 | 友情链接 | 销售联盟 | 京东社区 | 京东公益 | English Site</p>
+            <p style="text-align: center">Copyright © 2004-2016  京东JD.com 版权所有</p>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery-3.0.0.js"></script>
+    <script src="/static/js/check_form.js"></script>
+    <script>
+        $(function (){
+            $.sunyang('#form');
+        });
+    </script>
+</body>
+</html>

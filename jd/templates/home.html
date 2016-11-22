@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/sy.css"/>
+</head>
+<body style="margin: 0">
+    <div class="pg-head">
+        <div class="pg-head-top">
+            <ul>
+                <li id="user_name">{{ user_name }}</li>
+                <li style="color: red;font-size: 12px;" onclick="return_login(this)">退出登陆</li>
+                <li>我的订单</li>
+                <li>我的收藏</li>
+                <li>VIP会员俱乐部</li>
+                <li>客户服务</li>
+                <li>关注</li>
+                <li>手机版</li>
+            </ul>
+            <div style="clear: both;"> </div>
+        </div>
+    </div>
+
+    <div class="pg-head-top" style="height: 80px;">
+        <div style="width:326px;float: left;">
+            <img src="/static/img/logo.png"  style="padding:9px 0;"/>
+        </div>
+        <div>
+            <input type="text" style="width: 500px;height: 23px;float: left;margin-top: 25px;border-color: #B61D1D"/>
+            <input type="submit" value="搜索" style="height: 30px;width: 50px;float: left;margin-top: 25px;background-color: #B61D1D"/>
+
+        </div>
+        <div style="height:35px;width:110px ;border: 1px solid #DFDFDF;float: right;margin-top: 23px;margin-right: 130px;">
+            
+            <div class="c1"></div>
+            <div style="float: left;font-size:9px;margin-top: 8px;cursor: pointer;">
+                <a href="/home/cart/">购物车<span id="cart_num" style="color: red">{{ cart_num_all }}</span>件 ></a>
+            </div>
+        </div>
+        <div style="clear: both;"> </div>
+    </div>
+
+    <div class="pg-body" >
+        <!--<div class="pg-head" style="background-color: white">-->
+            <div class="pg-head-nav">
+                    <div style="width: 77%;height: 30px;margin: 0;float: right">
+                        <ul style="float: left;padding-top: 4px;">
+                            <li style="color: white">首页</li>
+                            <li style="color: white">水果商城</li>
+                            <li style="color: white">汽车商城</li>
+                            <li style="color: white">家用电器</li>
+                            <li style="color: white">自助装机</li>
+                            <li style="color: white">京东生鲜</li>
+                            <li style="color: white">1元购</li>
+                        </ul>
+                    </div>
+                    <div style="width: 23%;height: 30px;float: right;margin: 0;">
+                        <p style="float: right;color: white;margin: 0;margin-right: 46px;padding-top: 4px;">全部商品展示</p>
+                    </div>
+
+                    <div style="clear: both;"></div>
+            </div>
+        <!--</div>-->
+        <div style="width: 1390px;height: 100%;margin: 0 auto">
+            <div style="width: 23%;height: 100%;float: left;margin: 0;">
+                <div class="ph">
+                    <h4 style="margin: 0;">南方水果</h4>
+                    <p style="margin: 0;margin-top: 7px;font-size: 6px;color: darkgrey">火龙果 火龙果 火龙果</p>
+                    <hr />
+                </div>
+                 <div class="ph">
+                    <h4 style="margin: 0;">南方水果</h4>
+                    <p style="margin: 0;margin-top: 7px;font-size: 6px;color: darkgrey">火龙果 火龙果 火龙果</p>
+                    <hr />
+                </div>
+                 <div class="ph">
+                    <h4 style="margin: 0;">南方水果</h4>
+                    <p style="margin: 0;margin-top: 7px;font-size: 6px;color: darkgrey">火龙果 火龙果 火龙果</p>
+                    <hr />
+                </div>
+                 <div class="ph">
+                    <h4 style="margin: 0;">南方水果</h4>
+                    <p style="margin: 0;margin-top: 7px;font-size: 6px;color: darkgrey">火龙果 火龙果 火龙果</p>
+                    <hr />
+                </div>
+                 <div class="ph">
+                    <h4 style="margin: 0;">南方水果</h4>
+                    <p style="margin: 0;margin-top: 7px;font-size: 6px;color: darkgrey">火龙果 火龙果 火龙果</p>
+                    <hr />
+                </div>
+                <div class="ph">
+                    <h4 style="margin: 0;">热销排行</h4>
+                    <hr />
+                </div>
+            </div>
+
+            <div class="ph-right">
+                <p style="margin: 0;margin-top: 10px;font-size: 15px">福特->蒙迪欧->5.0T</p>
+                <hr style="border-top:2px double red;"/>
+            </div>
+            <div class="ph-right" >
+                <h5 style="margin: 0;border: 1px solid silver;padding: 10px">您已选：择蒙迪欧</h5>
+                <h5 style="margin: 0;border: 1px solid silver;padding: 10px;padding-left: 23px;">材质：
+                    <p style="display: inline;">双离合 &nbsp&nbsp 涡轮增加 &nbsp&nbsp 机械增加</p></h5>
+
+                <h5 style="margin: 0;border: 1px solid silver;padding: 10px;padding-left: 23px;">品牌：
+                    <p style="display: inline;">奔驰 &nbsp&nbsp 奥迪 &nbsp&nbsp 宝马</p></h5>
+
+                <h5 style="margin: 0;border: 1px solid silver;padding: 10px;padding-left: 23px;">风格：
+                    <p style="display: inline;">跑车 &nbsp&nbsp SUV &nbsp&nbsp MPV</p></h5>
+                <div style="width: 120px;height: 26px;background-color: #F0F0F0;;margin: 0 auto;
+                text-align: center;cursor: pointer;">
+                    更多选择
+                </div>
+            </div>
+            <div class="ph-right">
+                <table border="1" rules="none" bordercolor="silver">
+                    <thead>
+                    <tr style="font-size: 15px;">
+                        <th style="width: 50px">排序：</th>
+                        <th style="width: 50px;">价格</th>
+                        <th style="width: 50px;">销量</th>
+                        <th style="width: 50px;">最新</th>
+                        <th style="width: 81%;text-align:right">共{{ all_num }}件商品
+                            <span id="span_1">1</span>/<span id="span_2">{{ num }}</span>
+                            <input type="button" value="<" onclick="num_remove(this);"/>
+                            <input type="button" value=">" onclick="num_add(this);"/>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="ph-right">
+                {% for item in data %}
+                <div class="pg-img {{ item.1 }}">
+                    <div style="width: 100%;height: 75%;background-color: #CA8EFF;margin: 0;padding: 0">
+                        <img style="height: 100%;width: 100%;cursor: pointer;" src="/static/img/mei.jpg"/>
+                    </div>
+                    <div style="text-align: center;margin-top: 8px;width: 100%;height: 10%">
+                        <span>{{ item.0.name }}</span>
+                    </div>
+                    <div style="width: 30%;height: 10%;color: red;font-size: 15px;float: left">
+                        &nbsp&nbsp$<span>{{ item.0.money }}</span>
+                    </div>
+                    <div style="width: 70%;height: 10%;font-size: 15px;float: left;position: relative">
+                        <input type="button" value="-" style="width: 25px;height: 19px;margin: 0" onclick="remove(this);">
+                        <input type="text" style="height: 13px;width: 45px;margin: 0" value="0" readOnly="true" id="p_num"/>
+                        <input type="button" value="+" style="width: 25px;height: 19px;margin: 0" onclick="add(this)">
+                        <input type="button" value="买" style="width: 40px;height: 20px;margin: 0;
+                        background-color: #EA0000;" onclick="favor(this)">
+                        <div style="position: absolute;top: -27px;right: 11px">
+                            <span style="color: crimson;font-size: 18px;"></span>
+                        </div>
+
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 35px;height: 35px;background-color: #7a6e6e;position: fixed;left: 95%;top: 90%">
+        <img style="max-height: 100%;max-width: 100%;cursor: pointer;" src="/static/img/s.jpg"/>
+    </div>
+    <script src="/static/js/jquery-3.0.0.js"></script>
+    <script>
+        $(function() {
+            $('.pg-img').addClass('hide');
+            $('.fy_1').removeClass('hide');
+        });
+        function add(ths) {
+            var num = parseInt($(ths).prev().val())+1;
+            $(ths).prev().val(num);
+        }
+        function remove(ths) {
+            if($(ths).next().val()==='0'){
+                $(ths).next().val('0');
+            }else{
+                var num = parseInt($(ths).next().val())-1;
+                $(ths).next().val(num);
+            }
+        }
+        function num_add(ths) {
+            var all_num = $('#span_2').text();
+            var min_num = $('#span_1').text();
+            console.log(min_num,all_num,$('#span_2'));
+            if(min_num>=all_num){
+                console.log('无法移动');
+            }else {
+                $('#span_1').text(parseInt(min_num)+1);
+                $('.pg-img').addClass('hide');
+                $('.fy_'+$('#span_1').text()).removeClass('hide');
+            }
+        }
+
+        function num_remove(ths) {
+            var all_num = $('#span_2').text();
+            var min_num = $('#span_1').text();
+            if(min_num<=1){
+                console.log('无法移动了');
+            }else{
+                $('#span_1').text(parseInt(min_num)-1);
+                $('.pg-img').addClass('hide');
+                $('.fy_'+$('#span_1').text()).removeClass('hide');
+            }
+        }
+
+        function favor(ths) {
+            var p_num = $(ths).prev().prev().val();
+            var cart_num = $('#cart_num').text();
+            if(p_num== 0){
+                console.log($(ths).next());
+            }else{
+                $(ths).next().find('span').text("+"+p_num);
+                $('#cart_num').text(parseInt(cart_num)+parseInt(p_num));
+                setTimeout(function(){
+                    $(ths).next().find('span').text('');
+                },2000);
+                $.ajax({
+                    url: '/home/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'money':$(ths).parent().prev().find('span').text(),
+                        'p_name':$(ths).parent().prev().prev().find('span').text(),
+                        'num':$(ths).prev().prev().val(),
+                        'user_name':$('#user_name').text()
+                    },
+                    success:function (data) {
+                        console.log(data);
+                        if(data.status){
+                            console.log('购买成功了')
+                        }else{
+                            $('#username').parent().append("<span>"+data.message+"</span>")
+                        }
+                    },
+                })
+            }
+        }
+
+        function return_login(ths) {
+            $.ajax({
+                url: '/home/',
+                type: 'POST',
+                dataType: 'json',
+                data: {'return_login':true },
+                success:function (data) {
+                    if(data.status){
+                        location.href = '/home/login'
+                    }
+
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>
